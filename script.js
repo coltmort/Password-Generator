@@ -49,10 +49,8 @@ function constructPassword(valueLow, valueHigh){
   getValues()
 
 // check that at least one character set is selected
-  if(passwordUpper || passwordLower || passwordNumber || passwordSpecial){
-    console.log('thanks')
-  } else {
-    console.log('please select at least one character set')
+  if(passwordUpper || passwordLower || passwordNumber || passwordSpecial){} else {
+    alert('Please select at least one character set.')
     return
   }
   
@@ -60,7 +58,7 @@ function constructPassword(valueLow, valueHigh){
 
 
 if ((passwordLength < 8 || passwordLength > 128) && typeof passwordLength !== "number") {
-  console.log('please select a password length between 8 and 128')
+  alert('Please select a password length between 8 and 128 characters.')
   return
 }
 
