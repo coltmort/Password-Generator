@@ -57,7 +57,9 @@ function constructPassword(valueLow, valueHigh){
   }
   
 // check that password length is set between 8-128
-if (passwordLength < 8 || passwordLength > 128) {
+
+
+if ((passwordLength < 8 || passwordLength > 128) && typeof passwordLength !== "number") {
   console.log('please select a password length between 8 and 128')
   return
 }
