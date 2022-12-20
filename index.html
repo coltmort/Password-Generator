@@ -18,24 +18,26 @@
         </div>
         <div class="form">
           <div class="form-box">
-            <label for="lengthTxt">Password Length</label>
-            <input id="lengthTxt" name="length" type="number" maxlength="4" class="searchField" required/>
+            <label class="length" for="lengthTxt">Password Length</label>
+            <input id="lengthTxt" name="length" type="number" min="8" max="128" maxlength="4" required/>
+            <p id="errorTxt"> </p>
           </div>
           <div class="form-box">
-            <input id="upperChk" name="upper" type="checkbox" />
-            <label for="upperChk">Use uppercase letters?</label>
+            <input class="input" id="upperChk" name="upper" type="checkbox" checked/>
+            <label class="upper" for="upperChk">Use uppercase letters?</label>
+            <p id="error"></p>
           </div>
           <div class="form-box">
-            <input id="lowerChk" name="lower" type="checkbox" />
-            <label for="lowerChk">Use lowercase letter?</label>
+            <input class="input" id="lowerChk" name="lower" type="checkbox" checked/>
+            <label class="lower" for="lowerChk">Use lowercase letter?</label>
           </div>
           <div class="form-box">
-            <input id="numberChk" name="number" type="checkbox" />
-            <label for="numberChk">Use numbers?</label>
+            <input class="input" id="numberChk" name="number" type="checkbox" checked/>
+            <label class="number" for="numberChk">Use numbers?</label>
           </div>
           <div class="form-box">
-            <input id="specialChk" name="special" type="checkbox" />
-            <label for="specialChk">Use special characters?</label>
+            <input class="input" id="specialChk" name="special" type="checkbox" checked/>
+            <label class="special" for="specialChk">Use special characters?</label>
           </div>
         </div>
 

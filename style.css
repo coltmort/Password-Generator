@@ -42,6 +42,8 @@ header {
   padding: 30px 40px;
 }
 
+
+
 .card-header::after {
   content: " ";
   display: block;
@@ -52,6 +54,18 @@ header {
 
 .form-box{
   padding: .5em;
+}
+
+#errorTxt{
+  display: inline;
+  font-size: .8rem;
+  color: rgb(241, 94, 94);
+}
+
+#error{
+  display: inline;
+  font-size: .8rem;
+  color: rgb(241, 94, 94);
 }
 
 .card-body {
