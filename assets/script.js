@@ -1,5 +1,10 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+// event listeners
+document.querySelector('#upperChk').addEventListener('click', charCheck)
+document.querySelector('#lowerChk').addEventListener('click', charCheck)
+document.querySelector('#numberChk').addEventListener('click', charCheck)
+document.querySelector('#specialChk').addEventListener('click', charCheck)
 
 var passwordLength = 8;
 var passwordUpper = true;
@@ -53,18 +58,30 @@ function constructPassword(valueLow, valueHigh){
 // check for user approved character types
   getValues()
 
-// check that at least one character set is selected
-  if(passwordUpper || passwordLower || passwordNumber || passwordSpecial){} else {
-    alert('Please select at least one character set.')
-    return
+// adds event listener to password length text box
+document.querySelector('#lengthTxt').addEventListener("blur", function() {
+  // checks if text box has valid input
+  if (!document.getElementById('lengthTxt').checkValidity()){
+    // changes text in p tag to display error message if not valid
+    text = 'Please input value between 8 and 128'
+    console.log('blur')
+  } else {
+    text = ''
   }
-  
-// check that password length is set between 8-128
+  document.getElementById('errorTxt').innerText = text  
+});
 
+ function charCheck() {
+  getValues();
+  if(!(passwordUpper || passwordLower || passwordNumber || passwordSpecial)){
+    alertText = 'Please select at least one set of characters'
+    console.log('error')
+  } else {
+    alertText = ''
+  }
 
-if ((passwordLength < 8 || passwordLength > 128) && typeof passwordLength !== "number") {
-  // alert('Please select a password length between 8 and 128 characters.')
-  return
+   document.getElementById('error').innerText = alertText
+    
 }
 
 // reset approved char set
@@ -111,33 +128,4 @@ var passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
 
-// adds event listener to password length text box
-document.querySelector('#lengthTxt').addEventListener("blur", function() {
-  // checks if text box has valid input
-  if (!document.getElementById('lengthTxt').checkValidity()){
-    // changes text in p tag to display error message if not valid
-    text = 'Please input value between 8 and 128'
-    console.log('blur')
-  } else {
-    text = ''
-  }
-  document.getElementById('errorTxt').innerText = text  
-});
 
- function charCheck() {
-  getValues();
-  if(!(passwordUpper || passwordLower || passwordNumber || passwordSpecial)){
-    alertText = 'Please select at least one set of characters'
-    console.log('error')
-  } else {
-    alertText = ''
-  }
-
-   document.getElementById('error').innerText = alertText
-    
-}
-
-document.querySelector('#upperChk').addEventListener('click', charCheck)
-document.querySelector('#lowerChk').addEventListener('click', charCheck)
-document.querySelector('#numberChk').addEventListener('click', charCheck)
-document.querySelector('#specialChk').addEventListener('click', charCheck)
