@@ -7,7 +7,7 @@ This is a password generator built with crypto.getRandomNumbers for a more secur
 * Limits password length between 8-128 characters.
 * Rather than modals, checkboxes and an input box are used.
 
-##Usage
+## Usage
 The user will input the length of password needed and the types of characters to include in the password. The generator will compile the approved charcters and randomly select and insert characters into the generated password.
 
 live site: https://coltmort.github.io/Password-Generator/
