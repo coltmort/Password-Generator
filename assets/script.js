@@ -41,7 +41,6 @@ function charCheck() {
   getValues();
   if(!(passwordUpper || passwordLower || passwordNumber || passwordSpecial)){
     alertText = 'Please select at least one set of characters'
-    return
   } else {
     alertText = ''
   }
@@ -54,7 +53,6 @@ function textValidation() {
   if (!document.getElementById('lengthTxt').checkValidity()){
     // changes text in p tag to display error message if not valid
     text = 'Please input value between 8 and 128'
-    return
   } else {
     text = ''
   }
@@ -67,6 +65,10 @@ function constructPassword(){
 // check for user approved character types and valid password length
 textValidation()
 charCheck()
+
+if (!charCheck.checkValidity()){
+  return
+}
 
 // reset approved char set
 approvedCharSet = ''
