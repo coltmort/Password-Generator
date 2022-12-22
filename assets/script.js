@@ -1,7 +1,5 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-// event listeners
-
 
 var passwordLength = 8;
 var passwordUpper = true;
@@ -63,21 +61,11 @@ function textValidation() {
   document.getElementById('errorTxt').innerText = text  
 };
 
-
-
-  // adds event listener to password length text box
-  document.getElementById('lengthTxt').addEventListener("blur", function(){textValidation()})
-
-
-
-
 // make password
 function constructPassword(){
 
-// check for user approved character types
-// getValues()
+// check for user approved character types and valid password length
 textValidation()
-
 charCheck()
 
 // reset approved char set
@@ -98,15 +86,12 @@ if (passwordSpecial){
 }
 charLength = approvedCharSet.length
 
-// console.log(approvedCharSet)
-
 // generate random number
 function generateNumber() { random = crypto.getRandomValues(myArray)
 var mappedNumber = Math.floor((charLength) * (random - -2147483647) / (2147483647 - -2147483647));
-// console.log('random number: ' + random)
-// console.log('mapped number: ' + mappedNumber)
 return mappedNumber
 }
+
 // loop: select random char(based on random number) in concat set to the specified length
 password = ''
 
@@ -114,16 +99,18 @@ while(password.length < passwordLength){
   // add selected char to new password
   password += approvedCharSet.charAt(generateNumber())
 }
-// display password
 
+// display password
 // Write password to the #password input
 var passwordText = document.querySelector("#password"); 
   passwordText.value = password;
 }
 
-
+// add event listeners to checkboxes
 document.querySelector('#upperChk').addEventListener('click', charCheck)
 document.querySelector('#lowerChk').addEventListener('click', charCheck)
 document.querySelector('#numberChk').addEventListener('click', charCheck)
 document.querySelector('#specialChk').addEventListener('click', charCheck)
+// adds event listener to password length text box
+document.getElementById('lengthTxt').addEventListener("blur", textValidation)
 
