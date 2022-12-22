@@ -41,7 +41,7 @@ function charCheck() {
   getValues();
   if(!(passwordUpper || passwordLower || passwordNumber || passwordSpecial)){
     alertText = 'Please select at least one set of characters'
-    console.log('error')
+    return
   } else {
     alertText = ''
   }
@@ -54,7 +54,7 @@ function textValidation() {
   if (!document.getElementById('lengthTxt').checkValidity()){
     // changes text in p tag to display error message if not valid
     text = 'Please input value between 8 and 128'
-    console.log('blur')
+    return
   } else {
     text = ''
   }
